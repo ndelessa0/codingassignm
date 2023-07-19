@@ -214,13 +214,13 @@ class NoteTestCase(unittest.TestCase):
         self.app.post('/note', headers=headers, json=data2)
 
         # Test searching notes with keywords
-        response = self.app.get('/search?q=content', headers={'Authorization': f'Bearer {access_token}'})
+        response = self.app.get('/search?q=content', headers={'Authorization': f'Bearer {access_token}'},follow_redirects=True)
         self.assertEqual(response.status_code, 200)
         data = response.get_json()
         self.assertEqual(len(data), 2)
 
         # Test searching notes with non-existent keyword
-        response = self.app.get('/search?q=keyword', headers={'Authorization': f'Bearer {access_token}'})
+        response = self.app.get('/search?q=keyword', headers={'Authorization': f'Bearer {access_token}'},follow_redirects=True)
         self.assertEqual(response.status_code, 200)
         data = response.get_json()
         self.assertEqual(len(data), 0)
