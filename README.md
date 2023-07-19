@@ -60,6 +60,8 @@ Clone the repo
    git clone https://github.com/ndelessa0/codingassignm.git
    cd codingassignm
 ```
+Open Docker
+
 Build the Docker image
 ```
    docker build -t <image-name> .
@@ -75,20 +77,4 @@ The server will run at http://localhost:5000
 Tests are located in the /tests folder. To run tests:
    cd codingassignm
    pytest 
-   
-## File Structure
-├── app.py                  # Main Flask app
-├── config.py               # App config 
-├── database.py             # Database setup and models
-├── models
-│   ├── note.py             # Note model
-│   └── user.py             # User model
-├── resources
-│   ├── note.py             # Note API endpoints 
-│   └── user.py             # User API endpoints
-├── tests
-│   ├── test_note.py        # Note tests
-│   └── test_user.py        # User tests
-├── requirements.txt
-└── Dockerfile
 
