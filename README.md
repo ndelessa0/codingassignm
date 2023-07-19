@@ -13,6 +13,18 @@ This is a Flask RESTful API that allows users to manage their notes. Users can a
 - Public notes can be viewed without authentication, but cannot be modified
 - User management API to create new users
 
+## API Endpoints
+
+- POST /users - Create a new user
+- POST /login - Login with username and password
+- GET /notes - Get list of user's notes
+- POST /notes - Create a new note
+- GET /notes/<id> - Get a specific note
+- PUT /notes/<id> - Update a note
+- DELETE /notes/<id> - Delete a note
+- GET /notes?tag=<tag> - Filter notes by tag
+- GET /notes?search=<keyword> - Search notes by keyword
+
 ## Technologies Used
 
 - Flask: Python web framework for building the RESTful API
@@ -23,7 +35,39 @@ This is a Flask RESTful API that allows users to manage their notes. Users can a
 
 ## Installation and Setup
 
-1. Clone the repository:
+## Usage
+The app can be run locally or via Docker.
 
-   ```bash
-   git clone https://github.com/ndelessa0/codingassignm.git
+## Local
+Clone the repo
+Create and activate a virtual environment
+Install requirements: pip install -r requirements.txt
+Run the app: python app.py
+The server will run at http://localhost:5000
+
+## Docker
+Build the Docker image: docker build -t <image-name> .
+Run the Docker container: docker run -p 5000:5000 <image-name>
+The server will run at http://localhost:5000
+
+
+## Tests
+Tests are located in the /tests folder. To run tests, just go to root directory and run:
+   pytest 
+   
+## File Structure
+├── app.py                  # Main Flask app
+├── config.py               # App config 
+├── database.py             # Database setup and models
+├── models
+│   ├── note.py             # Note model
+│   └── user.py             # User model
+├── resources
+│   ├── note.py             # Note API endpoints 
+│   └── user.py             # User API endpoints
+├── tests
+│   ├── test_note.py        # Note tests
+│   └── test_user.py        # User tests
+├── requirements.txt
+└── Dockerfile
+
