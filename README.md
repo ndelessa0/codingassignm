@@ -22,8 +22,7 @@ This is a Flask RESTful API that allows users to manage their notes. Users can a
 - GET /notes/<id> - Get a specific note
 - PUT /notes/<id> - Update a note
 - DELETE /notes/<id> - Delete a note
-- GET /notes?tag=<tag> - Filter notes by tag
-- GET /notes?search=<keyword> - Search notes by keyword
+- GET /search/ - Search notes by keyword
 
 ## Technologies Used
 
@@ -33,26 +32,48 @@ This is a Flask RESTful API that allows users to manage their notes. Users can a
 - SQLAlchemy: Python SQL toolkit and Object-Relational Mapping (ORM) library
 - SQLite: Simple database for storing user and note data
 
-## Installation and Setup
 
-## Usage
+## Installation, Setup and Usage
 The app can be run locally or via Docker.
 
 ## Local
 Clone the repo
-Create and activate a virtual environment
-Install requirements: pip install -r requirements.txt
-Run the app: python app.py
+```
+   git clone https://github.com/ndelessa0/codingassignm.git
+   cd codingassignm
+```
+Create and activate a virtual environment(Optional but Recommended)
+
+Install requirements
+```
+   pip install -r requirements.txt
+```
+Run the app: 
+```
+   python app.py
+```  
 The server will run at http://localhost:5000
 
 ## Docker
-Build the Docker image: docker build -t <image-name> .
-Run the Docker container: docker run -p 5000:5000 <image-name>
+Clone the repo
+```
+   git clone https://github.com/ndelessa0/codingassignm.git
+   cd codingassignm
+```
+Build the Docker image
+```
+   docker build -t <image-name> .
+```
+Run the Docker container
+```
+   docker run -p 5000:5000 <image-name>
+```
 The server will run at http://localhost:5000
 
 
 ## Tests
-Tests are located in the /tests folder. To run tests, just go to root directory and run:
+Tests are located in the /tests folder. To run tests:
+   cd codingassignm
    pytest 
    
 ## File Structure
